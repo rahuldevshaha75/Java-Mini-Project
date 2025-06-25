@@ -37,8 +37,9 @@ public class Admin {
 
 
     public boolean login(String email, String password) {
-        return email.equals("a") && password.equals("a");
+        return "admin@mailcom".equals(email.trim()) && "jav@25".equals(password.trim());
     }
+    
 
     public List<Product> getProductList() {
         return productList;
@@ -53,10 +54,16 @@ public class Admin {
 
 
     public void deleteProduct(String productName) {
-        boolean removed = productList.removeIf(p -> p.getProductName().equals(productName));
-        if (removed) {
-            saveProductData();
+        try {
+            boolean removed = productList.removeIf(p -> p.getProductName().equals(productName));
+            if (removed) {
+                saveProductData();
+            } 
+        } catch (Exception e) {
+            System.out.println("Something Went Wrong. Error: " + e.getMessage());
+            e.printStackTrace(); 
         }
+        
     }
     
 
@@ -71,11 +78,12 @@ public class Admin {
         saveProductData();
     }
 
+
     private void saveProductData() {
+        
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(FILE_PATH))) {
             for (int i = 0; i < productList.size(); i++) {
-                Product product = productList.get(i);  // Get the product from the list by index
-
+                Product product = productList.get(i);
                 bw.write(product.getProductName() + "," + 
                 product.getPrice() + "," +
                 product.getQuantity() + "," + 
@@ -83,7 +91,6 @@ public class Admin {
                 product.getColor());
 
                 bw.newLine();
-                //bw.close(); Don't Need Cause Try Resources Auto Close it.
             }
         } catch (IOException e) {
             e.printStackTrace();

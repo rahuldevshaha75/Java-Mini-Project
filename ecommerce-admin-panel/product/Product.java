@@ -9,7 +9,7 @@ public class Product {
     private String category;
     private String color;
 
-    // Constructor
+    
     public Product(String productName, double price, int quantity, String category, String color) {
         this.productName = productName;
         this.price = price;
@@ -18,7 +18,7 @@ public class Product {
         this.color = color;
     }
 
-    // Getters and Setters
+    
     public String getProductName() {
         return productName;
     }

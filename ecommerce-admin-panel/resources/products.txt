@@ -1,0 +1,2 @@
+T-Shirt,1200.0,20,Cloth,Blue
+Lungi,800.0,110,Cloth,Blue
