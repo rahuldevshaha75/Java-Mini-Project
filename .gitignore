@@ -1,0 +1,9 @@
+# Ignore compiled Java class files
+*.class
+
+# Ignore archive files
+*.rar
+*.zip
+
+# Ignore temp files from Code Runner or similar tools
+*.tempcoderunner
