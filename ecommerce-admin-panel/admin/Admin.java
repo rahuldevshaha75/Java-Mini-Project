@@ -61,8 +61,8 @@ public class Admin {
                     productList.remove(i);
                     removed = true;
                     break;
-    }
-}
+                }
+            }
 
             if (removed) {
                 saveProductData();

@@ -41,8 +41,6 @@ public class AdminPanel extends JFrame implements ActionListener {
     private JTextField editQuantityField;
     private JTextField editCategoryField;
 
-
-
     private String[] colors = {"Red", "Blue", "Violet", "Green", "Yellow", "Orange"};
     private JComboBox<String>  colorBtn = new JComboBox<>(colors);  
 
@@ -119,7 +117,7 @@ public class AdminPanel extends JFrame implements ActionListener {
                     JOptionPane.showMessageDialog(this, "Login successful!");
                     showProductManagementPanel();
                 } else {
-                    JOptionPane.showMessageDialog(this, "Invalid credentials, Try Again.");
+                    JOptionPane.showMessageDialog(this, "Invalid Data, Try Again!");
                 }
 
             }
@@ -216,7 +214,7 @@ public class AdminPanel extends JFrame implements ActionListener {
         JPanel panel = new JPanel();
         panel.setLayout(new BorderLayout());
 
-        String[] columnNames = {"Product Name", "Price", "Quantity", "Category", "Color"};
+        String columnNames[] = {"Product Name", "Price", "Quantity", "Category", "Color"};
         tableModel = new DefaultTableModel(columnNames, 0);
         productTable = new JTable(tableModel);
         loadProductData();
