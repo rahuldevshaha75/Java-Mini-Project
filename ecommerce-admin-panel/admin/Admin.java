@@ -55,7 +55,15 @@ public class Admin {
 
     public void deleteProduct(String productName) {
         try {
-            boolean removed = productList.removeIf(p -> p.getProductName().equals(productName));
+            boolean removed = false;
+            for (int i = 0; i < productList.size(); i++) {
+                if (productList.get(i).getProductName().equals(productName)) {
+                    productList.remove(i);
+                    removed = true;
+                    break;
+    }
+}
+
             if (removed) {
                 saveProductData();
             } 
