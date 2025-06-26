@@ -60,7 +60,5 @@ public class Product {
     }
 
     
-    public String toString() {
-        return productName + ", " + price + ", " + quantity + ", " + category + ", " + color;
-    }
+    
 }
